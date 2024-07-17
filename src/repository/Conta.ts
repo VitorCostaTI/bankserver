@@ -55,6 +55,6 @@ export class Conta {
     @OneToMany(() => Extrato, extrato => extrato.conta)
     extrato: Extrato[];
 
-    @OneToMany(() => Pix, pix => pix.cona)
+    @OneToMany(() => Pix, pix => pix.conta)
     pix: Pix[];
 }
