@@ -1,17 +1,24 @@
 import { Module } from '@nestjs/common';
-import { ContaModule } from './module/conta/conta.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { PixModule } from './module/pix/pix.module';
-import { ExtratoModule } from './module/extrato/extrato.module';
+
 import { DatabaseConfig } from './Config/Database';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { CartaoModule } from './module/cartao/cartao.module';
+import { ContaModule } from './module/conta/conta.module';
+import { ExtratoModule } from './module/extrato/extrato.module';
+import { GerenteModule } from './module/gerente/gerente.module';
+import { PixModule } from './module/pix/pix.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(DatabaseConfig),
 
+    CartaoModule,
     ContaModule,
     ExtratoModule,
-    PixModule, 
+    GerenteModule,
+    PixModule,
   ],
 })
-export class AppModule {}
+
+export class AppModule { }
