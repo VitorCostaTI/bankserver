@@ -5,56 +5,56 @@ import { Pix } from "./Pix";
 @Entity()
 export class Conta {
     @PrimaryGeneratedColumn()
-    private id: Number;
+    id: Number;
 
     @Column()
-    private nome: string;
+    nome: string;
 
     @Column()
-    private cpf: string;
+    cpf: string;
 
     @Column()
-    private email: string;
+    email: string;
 
     @Column()
-    private telefone: string;
+    telefone: string;
 
     @Column()
-    private limite_emprestimo: string;
+    limite_emprestimo: string;
 
     @Column()
-    private faturamento: string;
+    faturamento: string;
 
     @Column()
-    private despesa: string;
+    despesa: string;
 
     @Column()
-    private total: string;
+    total: string;
 
     @Column()
-    private logradouro: string;
+    logradouro: string;
 
     @Column()
-    private bairro: string;
+    bairro: string;
 
     @Column()
-    private cidade: string;
+    cidade: string;
 
     @Column()
-    private estado: string;
+    estado: string;
 
     @Column()
-    private complemento: string;
+    complemento: string;
 
     @ManyToOne(() => Gerente, gerente => gerente.conta)
-    private gerente: Gerente;
+    gerente: Gerente;
 
     @OneToMany(() => Cartao, cartao => cartao.conta)
-    private cartao: Cartao[];
+    cartao: Cartao[];
 
     @OneToMany(() => Extrato, extrato => extrato.conta)
-    private extrato: Extrato[];
+    extrato: Extrato[];
 
     @OneToMany(() => Pix, pix => pix.cona)
-    private pix: Pix[];
+    pix: Pix[];
 }
