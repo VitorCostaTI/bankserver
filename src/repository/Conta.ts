@@ -1,7 +1,8 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Cartao } from "./Cartao";
 import { Extrato } from "./Extrato";
-import { Pix } from "./Pix";
 import { Gerente } from "./Gerente";
+import { Pix } from "./Pix";
 
 @Entity()
 export class Conta {

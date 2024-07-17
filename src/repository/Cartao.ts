@@ -2,19 +2,19 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Conta } from "./Conta";
 
 @Entity()
-export class Pix {
+export class Cartao {
     @PrimaryGeneratedColumn()
-    id: Number;
+    id: number;
 
     @Column()
-    chave: string;
+    cartao: string;
 
     @Column()
-    categoria: string;
+    vencimento: string;
 
     @Column()
-    data: Date;
+    cvc: string;
 
-    @ManyToOne(() => Conta, conta => conta.pix)
-    conta: Conta;
+    @ManyToOne(() => Conta, conta => conta.cartao)
+    conta: Conta
 }
