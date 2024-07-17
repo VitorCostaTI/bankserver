@@ -1,6 +1,7 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Extrato } from "./Extrato";
 import { Pix } from "./Pix";
+import { Gerente } from "./Gerente";
 
 @Entity()
 export class Conta {
@@ -46,14 +47,14 @@ export class Conta {
     @Column()
     complemento: string;
 
-    @ManyToOne(() => Gerente, gerente => gerente.conta)
-    gerente: Gerente;
-
     @OneToMany(() => Cartao, cartao => cartao.conta)
     cartao: Cartao[];
 
     @OneToMany(() => Extrato, extrato => extrato.conta)
     extrato: Extrato[];
+
+    @ManyToOne(() => Gerente, gerente => gerente.conta)
+    gerente: Gerente;
 
     @OneToMany(() => Pix, pix => pix.conta)
     pix: Pix[];
